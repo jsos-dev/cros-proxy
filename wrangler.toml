@@ -1,0 +1,24 @@
+name = "cors-proxy"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Worker 配置
+[observability]
+enabled = true
+
+# 环境变量（可选）
+# 如果设置了 CORS_PROXY_KEY，则需要认证头才能访问
+# [vars]
+# CORS_PROXY_KEY = "your-secret-key"
+
+# 生产环境配置
+# [env.production]
+# name = "cors-proxy-prod"
+# [env.production.vars]
+# CORS_PROXY_KEY = "your-production-secret-key"
+
+# 预览环境配置
+# [env.preview]
+# name = "cors-proxy-preview"
+# [env.preview.vars]
+# CORS_PROXY_KEY = "your-preview-secret-key"
