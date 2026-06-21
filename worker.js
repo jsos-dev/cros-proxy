@@ -78,12 +78,13 @@ export default {
         }
       }
 
-      // 构建新的请求
+      // 构建新的请求，转发 AbortSignal 以支持客户端断开时中止上游请求
       const proxyRequest = new Request(targetUrl, {
         method: request.method,
         headers: headersToForward,
         body: request.body,
         redirect: 'follow',
+        signal: request.signal,
       });
 
       // 发起请求
